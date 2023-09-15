@@ -1,6 +1,9 @@
 import "./Formulario.css"
 import CampoTexto from "../CampoTexto";
 import ListaOpciones from "../ListaOpciones";
+import Boton from "../Boton";
+
+
 const Formulario = ()=>{
     return <section className="formulario">
         <form>
@@ -9,6 +12,7 @@ const Formulario = ()=>{
             <CampoTexto titulo="Puesto" placeholder="Ingrese el Puesto"/>
             <CampoTexto titulo="Foto" placeholder="Ingrese enlace de Foto"/>
             <ListaOpciones/>
+            <Boton texto="Crear"/>
         </form>
     </section>
 }
