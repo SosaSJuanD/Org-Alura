@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './componentes/Header/Header';
 import Formulario from './componentes/Formulario/Formulario';
+import MiOrg from './componentes/MiOrg';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       {/* <Header></Header>podemos hacer el llamado de tres maneras   */}
       <Header/>{/* podemos hacer el llamado de tres maneras  */}
       <Formulario/>
+      <MiOrg/>
     </div>
   );
 }
