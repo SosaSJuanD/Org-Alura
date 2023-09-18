@@ -3,6 +3,7 @@ import './App.css';
 import Header from './componentes/Header/Header';
 import Formulario from './componentes/Formulario/Formulario';
 import MiOrg from './componentes/MiOrg';
+import Equipo from './componentes/Equipo';
 
 function App() {
   const [mostrarFormulario, actulizarMostar ] = useState(true)
@@ -23,8 +24,14 @@ function App() {
       {/* {mostrarFormulario === true ? <Formulario/> : <div></div>} */}
       {/* {mostrarFormulario ? <Formulario/> : <></>} */}
       {mostrarFormulario && <Formulario/>}
-
       <MiOrg CambiarMostrar={CambiarMostrar}/>
+      <Equipo equipo="Programación"/>
+      <Equipo equipo="Front End"/>
+      <Equipo equipo="Data Science"/>
+      <Equipo equipo="Devops"/>
+      <Equipo equipo="UX y Diseño"/>
+      <Equipo equipo="Móvil"/>
+      <Equipo equipo="Innovación y  Gestión"/>
     </div>
   );
 }
