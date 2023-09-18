@@ -2,18 +2,18 @@ import { useState } from "react"
 import "./CampoTexto.css"
 
 const CampoTexto = (props) =>{
-    const [valor, actualizarValor] = useState("")
+    const placeholderModificado = `${props.placeholder}`
     
     const manejarCambio = (e) =>{
-        actualizarValor(e.target.value)
+        props.actuzalizarValor(e.target.value)
     }
 
     return <div className="campo-texto">
         <label>{props.titulo}</label>
         <input 
-            placeholder = {props.placeholder} 
+            placeholder = {placeholderModificado} 
             required={props.required} 
-            value={valor}
+            value={props.valor}
             onChange={manejarCambio}
         /> {/* buenas practicas para cerrar las ET input en React */}
     </div>
