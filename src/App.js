@@ -7,7 +7,7 @@ import MiOrg from './componentes/MiOrg';
 function App() {
   const [mostrarFormulario, actulizarMostar ] = useState(true)
   //Ternarios --> condicion ? seMuestra : noSemuestra
-
+  //condicion && seMuestras
   const CambiarMostrar = () =>{
     actulizarMostar(!mostrarFormulario)
   }
@@ -17,7 +17,13 @@ function App() {
       {/* {Header()}podemos hacer el llamado de tres maneras  */}
       {/* <Header></Header>podemos hacer el llamado de tres maneras   */}
       <Header/>{/* podemos hacer el llamado de tres maneras  */}
-      {mostrarFormulario === true ? <Formulario/> : <div></div>}
+    
+      {/* diferentes formas de poner la condicion */}
+    
+      {/* {mostrarFormulario === true ? <Formulario/> : <div></div>} */}
+      {/* {mostrarFormulario ? <Formulario/> : <></>} */}
+      {mostrarFormulario && <Formulario/>}
+
       <MiOrg CambiarMostrar={CambiarMostrar}/>
     </div>
   );
