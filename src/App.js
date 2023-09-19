@@ -6,7 +6,7 @@ import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
 
 function App() {
-  const [mostrarFormulario, actulizarMostar ] = useState(true)
+  const [mostrarFormulario, actulizarMostar ] = useState(false)
   //Ternarios --> condicion ? seMuestra : noSemuestra
   //condicion && seMuestras
   const CambiarMostrar = () =>{
@@ -14,7 +14,7 @@ function App() {
   }
 
   //Lista de Equipos
-  const equipos =[
+  const equipos = [
     {
       titulo: "Programación",
       colorPrimario: "#57C278",
@@ -62,9 +62,9 @@ function App() {
     
       {/* {mostrarFormulario === true ? <Formulario/> : <div></div>} */}
       {/* {mostrarFormulario ? <Formulario/> : <></>} */}
-      {mostrarFormulario && <Formulario/>}
+      {mostrarFormulario && <Formulario equipos={equipos.map( (equipo) => equipo.titulo)}/>}
       <MiOrg CambiarMostrar={CambiarMostrar}/>
-      {/* siempre que trabajemos con map debemos hacer uso de key */}
+      
       {
         equipos.map( (equipo) =>{
           return <Equipo datos={equipo} key={equipo.titulo}/>

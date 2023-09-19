@@ -8,7 +8,7 @@ const Equipo = (props) =>{
     }
 
     const estiloTitulo={
-        borderColor: colorSecundario,
+        borderColor: colorPrimario,
     }
 
     return <section className="equipo" style={obj}>
