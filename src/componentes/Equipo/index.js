@@ -7,7 +7,7 @@ import hexToRgba from 'hex-to-rgba';
 const Equipo = (props) =>{
     // destruccturacion
     const {colorPrimario, colorSecundario, titulo, id} = props.datos;
-    const {colaboradores, eliminarColaborador, actualizarColor} = props 
+    const {colaboradores, eliminarColaborador, actualizarColor, like} = props 
     
     
     const obj ={
@@ -34,11 +34,12 @@ const Equipo = (props) =>{
                 <div className="colaboradores">
                     {
                         colaboradores.map((colaborador, index)=> <Colaborador 
-                        datos={colaborador} 
-                        key = {index}
-                        colorPrimario={colorPrimario}
-                        eliminarColaborador ={eliminarColaborador}/>)
-                        
+                            datos={colaborador} 
+                            key = {index}
+                            colorPrimario={colorPrimario}
+                            eliminarColaborador ={eliminarColaborador}
+                            like={like}
+                        />)
                     }
                 </div>
             </section>
