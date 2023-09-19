@@ -18,8 +18,8 @@ function App() {
     },
     {
       equipo: "Programación",
-      foto: "https://github.com/genesysaluralatam.png",
-      nombre: "Genesys Rondón",
+      foto: "https://github.com/christianpva.png",
+      nombre: "christian",
       puesto: "Desarrolladora de software e instructora"
     },
     {
@@ -53,11 +53,14 @@ function App() {
   //registrar colaborador
 
   const registarColaborador = (colaborador)=>{
-    console.log("nuevo colaborador", colaborador)
-    
-    
+    console.log("nuevo colaborador", colaborador) 
     //spread operator
     actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+  //eliminar colaborador
+  const eliminarColaborador= () =>{
+    console.log("Eliminanr colaborador")
   }
 
   //Lista de Equipos
@@ -126,6 +129,7 @@ function App() {
             datos={equipo} 
             key={equipo.titulo}
             colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+            eliminarColaborador={eliminarColaborador}
           />
         )
       }
