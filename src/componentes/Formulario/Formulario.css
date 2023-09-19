@@ -1,6 +1,6 @@
 .formulario{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 80px 0;
 }
 
@@ -15,4 +15,5 @@
 .formulario h2{
     font-size: 32px;
     font-weight: 400;
+    color: #212121;
 }
