@@ -4,13 +4,28 @@ import Header from './componentes/Header/Header';
 import Formulario from './componentes/Formulario/Formulario';
 import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
+import Colaborador from './componentes/Colaborador';
 
 function App() {
   const [mostrarFormulario, actulizarMostar ] = useState(false)
+  const [colaboradores, actualizarColaboradores] = useState([])
+
+
+
   //Ternarios --> condicion ? seMuestra : noSemuestra
   //condicion && seMuestras
   const CambiarMostrar = () =>{
     actulizarMostar(!mostrarFormulario)
+  }
+
+  //registrar colaborador
+
+  const registarColaborador = (colaborador)=>{
+    console.log("nuevo colaborador", colaborador)
+    
+    
+    //spread operator
+    actualizarColaboradores([...colaboradores, colaborador])
   }
 
   //Lista de Equipos
@@ -56,13 +71,22 @@ function App() {
     <div>
       {/* {Header()}podemos hacer el llamado de tres maneras  */}
       {/* <Header></Header>podemos hacer el llamado de tres maneras   */}
+      
       <Header/>{/* podemos hacer el llamado de tres maneras  */}
     
+      
       {/* diferentes formas de poner la condicion */}
-    
       {/* {mostrarFormulario === true ? <Formulario/> : <div></div>} */}
       {/* {mostrarFormulario ? <Formulario/> : <></>} */}
-      {mostrarFormulario && <Formulario equipos={equipos.map( (equipo) => equipo.titulo)}/>}
+      
+      {
+        mostrarFormulario && <Formulario 
+          equipos={equipos.map( (equipo) => equipo.titulo)}
+          registarColaborador={registarColaborador}
+        />
+      }
+      
+      
       <MiOrg CambiarMostrar={CambiarMostrar}/>
       
       {
